@@ -1,0 +1,50 @@
+// prisma/schema.prisma
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:Edcrfv%23123@localhost:3306/mytask123"
+}
+
+model groceryItem {
+  id               Int            @id @default(autoincrement())
+  name             String         @unique
+  price            Float
+  avilableQuantity Int
+  soldQuantity     Int            @default(0)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  orderDetails     orderDetails[]
+}
+
+model user {
+  id    Int     @id @default(autoincrement())
+  name  String
+  email String  @unique
+  order order[]
+}
+
+model order {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  orderDetails orderDetails[]
+  user         user           @relation(fields: [userId], references: [id])
+  userId       Int
+}
+
+model orderDetails {
+  id        Int      @id @default(autoincrement())
+  quantity  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  order     order    @relation(fields: [orderId], references: [id])
+  orderId   Int
+
+  groceryItem   groceryItem @relation(fields: [groceryItemId], references: [id])
+  groceryItemId Int
+}
