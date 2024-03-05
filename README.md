@@ -13,7 +13,7 @@ Prisma
 
 1. Clone the repository:
 
-git clone git@github.com:Rohit-25/qp-assessment.git
+git clone https://github.com/Rohit-25/qp-assessment.git
 cd GroceryItem
 
 2. Install dependencies:
