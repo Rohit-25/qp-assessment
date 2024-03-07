@@ -19,9 +19,6 @@ RUN npx prisma generate
 # Expose the port your app will run on (change accordingly)
 EXPOSE 3000
 
-# # Set the environment variable for the database URL for Docker environment
-# ENV DATABASE_URL=mysql://rohit:rohit123@mysql:3306/mytask
-
-
 # Start the application
 CMD ["npm", "start"]
+

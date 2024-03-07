@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
    "start": "node ./dist/src/app.js",
-    "start:dev":"nodemon --exec ./node_modules/.bin/ts-node ./src/app.ts" 
+    "prisma:generate": "npx prisma generate",
+    "build": "tsc ./node_modules/.bin/ts-node ./src/app.ts",
+    "start:dev":"nodemon --exec ./node_modules/.bin/ts-node ./src/app.ts" ,
+    "start-with-prisma": "npx prisma generate && npm start",
+  "migrate-deploy": "npx prisma migrate deploy"
   },
   "keywords": [],
   "author": "",
