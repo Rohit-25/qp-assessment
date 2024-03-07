@@ -13,9 +13,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const connection_1 = __importDefault(require("./database/connection"));
-const admin_routes_1 = require("./routes/admin.routes");
-const user_routs_1 = require("./routes/user.routs");
+const connection_1 = __importDefault(require("../database/connection"));
+const admin_routes_1 = require("../routes/admin.routes");
+const user_routs_1 = require("../routes/user.routs");
 const app = (0, express_1.default)();
 const PORT = 3000;
 function server() {

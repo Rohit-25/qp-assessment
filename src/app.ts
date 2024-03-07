@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
-import db from './src/database/connection';
-import { adminRoutes } from './src/routes/admin.routes';
-import { userRoutes } from './src/routes/user.routs';
+import db from './database/connection';
+import { adminRoutes } from './routes/admin.routes';
+import { userRoutes } from './routes/user.routs';
 
 
 const app = express();

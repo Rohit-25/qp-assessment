@@ -6,7 +6,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = "mysql://root:Edcrfv%23123@localhost:3306/mytask123"
+  url      = env("DATABASE_URL")
 }
 
 model groceryItem {
