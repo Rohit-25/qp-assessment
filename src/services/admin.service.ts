@@ -65,8 +65,7 @@ export class AdminService {
 
     try {
           let groceryItemId = req.params.groceryItemId;
-          
-          
+        
            const groceryItem = await db.prisma.groceryItem.findUnique({
             where:{
                 id:Number(groceryItemId),

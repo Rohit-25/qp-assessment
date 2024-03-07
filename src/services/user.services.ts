@@ -16,7 +16,6 @@ export class UserService {
 
           if(userExisted){
             return responseStatus(res,409,"user already exist",null);
-
           }
           
           let user= await db.prisma.user.create({
@@ -24,7 +23,7 @@ export class UserService {
                 name,
                 email,  
               },
-              })
+            })
          
             return responseStatus(res, 200, "user created",user );
         
@@ -37,15 +36,7 @@ export class UserService {
  getallUser = async (req: Request, res: Response) => {
 
     try {
-          const userWithOrdersAndItems = await db.prisma.user.findMany({
-            // include: {
-            //   order: {
-            //     include: {
-            //       items: true // Assuming 'items' is the name of the relation in your Order model
-            //     }
-            //   }
-            // }
-         });
+          const userWithOrdersAndItems = await db.prisma.user.findMany({});
           
           return responseStatus(res, 200, "all user list",userWithOrdersAndItems);
         
